@@ -1,14 +1,9 @@
 const express = require('express');
 const app = express();
-const PORT = 4000;
 
 app.get('/', (req, res) => {
   res.status(200).json('Welcome, your app is working well');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
-
+// Do not use app.listen(); instead, export the app
 module.exports = app;
-module.exports.handler = serverless(app);
